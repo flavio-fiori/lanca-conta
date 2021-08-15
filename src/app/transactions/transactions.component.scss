@@ -1,0 +1,42 @@
+.transactions {
+
+    width: 100%;
+    display: block;
+
+    &__subtitle {
+
+        display: block;
+        font-size: 18px;
+        color: var(--color-subtitle);
+        margin-bottom: 1rem;
+
+    }
+
+    &__container {
+
+        width: 100%;
+        display: block;
+        overflow-x: auto;
+
+    }
+
+    .table {
+
+        width: 100%;
+
+        th, td {
+
+            padding: 0.5rem 0;
+
+        }
+
+        th {
+            
+            font-weight: 600;
+            text-align: left;
+
+        }
+
+    }
+
+}
