@@ -9,24 +9,38 @@
 
             <h2 class="resume__subtitle">Resumo</h2>
 
-            <ul class="resume__list">
+            <ul class="resume__list" *ngIf="!!resume; else emptyResume">
                 
                 <li class="resume__item">
-                    Valor total:
-                    <strong>R$00,00</strong>
+                    De: <strong>{{ resume.initialDate | date: "shortDate" }}</strong>
+                    Até: <strong>{{ resume.finalDate | date: "shortDate" }}</strong>
                 </li>
 
                 <li class="resume__item">
-                    Valor total:
-                    <strong>R$00,00</strong>
+                    Quantidade de transferencia:
+                    <strong>{{ resume.totalQuantity | currency }}</strong>
                 </li>
 
                 <li class="resume__item">
+                    Valor líquido:
+                    <strong>{{ resume.totalNetAmount | currency }}</strong>
+                </li>
+
+                <li class="resume__item">
+                    Média total:
+                    <strong>{{ resume.totalAverageAmount | currency }}</strong>
+                </li>
+
+                <li class="resume__item resume__item--main">
                     Valor total:
-                    <strong>R$00,00</strong>
+                    <strong>{{ resume.totalAmount | currency }}</strong>
                 </li>
 
             </ul>
+
+            <ng-template #emptyResume>
+                <p>Resumo não encontrado</p>
+            </ng-template>
 
         </div>
 
