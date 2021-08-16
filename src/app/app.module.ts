@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { ResumeComponent } from './resume/resume.component';
 import { TransactionsComponent } from './transactions/transactions.component';
+import { FooterComponent } from './footer/footer.component';
 
 registerLocaleData(localePT, 'pt');
 
@@ -19,6 +20,7 @@ registerLocaleData(localePT, 'pt');
     HeaderComponent,
     ResumeComponent,
     TransactionsComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
