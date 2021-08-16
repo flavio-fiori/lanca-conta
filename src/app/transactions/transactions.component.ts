@@ -10,6 +10,7 @@ import { TransactionService } from "../services/transaction/transaction.service"
 export class TransactionsComponent implements OnInit {
 
     @Input() transactions: any[] = [];
+    p: number = 1;
 
     constructor(private service: TransactionService) {}
 

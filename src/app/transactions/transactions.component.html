@@ -20,7 +20,7 @@
 
                 <tbody>
 
-                    <tr *ngFor="let transaction of transactions">
+                    <tr *ngFor="let transaction of transactions | paginate: { itemsPerPage: 5, currentPage: p }">
                         <td>{{ transaction.cardBrand }}</td>
                         <td>{{ transaction.date | date: "shortDate" }}</td>
                         <td>{{ transaction.channel }}</td>
@@ -31,6 +31,13 @@
                 </tbody>
 
             </table>
+
+            <pagination-controls 
+                (pageChange)="p = $event"
+                previousLabel="Anterior"
+                nextLabel="Próximo"
+            >
+            </pagination-controls>
 
             <ng-template #emptyTransferList>
                 <p>Nenhuma transferencia encontrada</p>
