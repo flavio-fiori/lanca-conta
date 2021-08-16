@@ -6,32 +6,37 @@
 
         <div class="transactions__container">
 
-            <table class="table">
+            <table class="table" *ngIf="transactions.length > 0; else emptyTransferList">
 
                 <thead>
                     <tr>
                         <th>Bandeira</th>
                         <th>Data</th>
                         <th>Canal</th>
+                        <th>Valor Liquido</th>
                         <th>Status</th>
                     </tr>
                 </thead>
 
                 <tbody>
 
-                    <tr>
-
-                        <td>Mastercard</td>
-                        <td>22/07/2021</td>
-                        <td>lorem</td>
-                        <td>Aprovado</td>
+                    <tr *ngFor="let transaction of transactions">
+                        <td>{{ transaction.cardBrand }}</td>
+                        <td>{{ transaction.date | date: "shortDate" }}</td>
+                        <td>{{ transaction.channel }}</td>
+                        <td>{{ transaction.netAmount | currency }}</td>
+                        <td>{{ transaction.status }}</td>
                     </tr>
 
                 </tbody>
 
             </table>
 
-    </div>
+            <ng-template #emptyTransferList>
+                <p>Nenhuma transferencia encontrada</p>
+            </ng-template>
+
+        </div>
 
     </div>
 

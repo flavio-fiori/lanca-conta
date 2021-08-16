@@ -1,4 +1,5 @@
-import { Component } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
+import { ResumeService } from "../services/resume/resume.service";
 
 @Component({
     selector: 'app-resume',
@@ -6,6 +7,16 @@ import { Component } from "@angular/core";
     styleUrls: ['./resume.component.scss']
 })
 
-export class ResumeComponent {
+export class ResumeComponent implements OnInit {
+
+    @Input() resume: any = [];
+
+    constructor(private service: ResumeService){}
+
+    ngOnInit(): void {
+
+        this.service.serach().subscribe(response => this.resume = response);
+
+    }
 
 }
