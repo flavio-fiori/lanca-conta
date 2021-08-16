@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { DEFAULT_CURRENCY_CODE, LOCALE_ID } from '@angular/core';
 import localePT from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -26,6 +27,7 @@ registerLocaleData(localePT, 'pt');
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    NgxPaginationModule
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'pt' },
