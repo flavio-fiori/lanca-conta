@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from "@angular/core";
 import { TransactionService } from "../services/transaction/transaction.service";
 
+import { ITransaction } from "../@types/transaction";
+
 @Component({
     selector: 'app-transactions',
     templateUrl: './transactions.component.html',
@@ -9,15 +11,19 @@ import { TransactionService } from "../services/transaction/transaction.service"
 
 export class TransactionsComponent implements OnInit {
 
-    @Input() transactions: any[] = [];
+    @Input() transactions: ITransaction[];
     p: number = 1;
 
-    constructor(private service: TransactionService) {}
+    constructor(private service: TransactionService) {
+
+        this.transactions = [];
+
+    };
 
     ngOnInit(): void {
 
-        this.service.getAll().subscribe(response => this.transactions = response);
+        this.service.searchAll().subscribe(response => this.transactions = response);
 
-    }
+    };
 
-}
+};

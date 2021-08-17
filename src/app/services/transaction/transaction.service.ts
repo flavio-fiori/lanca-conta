@@ -1,26 +1,21 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+import { environment } from './../../../environments/environment';
+
+import { ITransaction } from './../../@types/transaction';
+
 @Injectable({
     providedIn: 'root'
 })
+
 export class TransactionService {
 
-    private listTransactions: any[];
+    constructor(private httpClient: HttpClient) {}
 
-    constructor(private httpClient: HttpClient) {
+    public searchAll() {
 
-        this.listTransactions = [];
-
-    }
-
-    get transactions() {
-        return this.listTransactions;
-    }
-
-    getAll() {
-
-        return this.httpClient.get<any[]>('http://localhost:3000/transactions');
+        return this.httpClient.get<ITransaction[]>(`${environment.baseURL}/transactions`);
 
     }
-}
+};

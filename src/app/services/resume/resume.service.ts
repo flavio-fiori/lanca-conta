@@ -1,26 +1,21 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+import { environment } from './../../../environments/environment';
+
+import { IResume } from 'src/app/@types/resume';
+
 @Injectable({
     providedIn: 'root'
 })
+
 export class ResumeService {
 
-    private resumeInfo: any;
+    constructor(private httpClient: HttpClient) {}
 
-    constructor(private httpClient: HttpClient) {
+    public search() {
 
-        this.resumeInfo = [];
-
-    }
-
-    get resume() {
-        return this.resumeInfo;
-    }
-
-    serach() {
-
-        return this.httpClient.get<any>('http://localhost:3000/summary');
+        return this.httpClient.get<IResume>(`${environment.baseURL}/summary`);
 
     }
 
