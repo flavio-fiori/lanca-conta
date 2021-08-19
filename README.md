@@ -29,11 +29,19 @@ npm run server
 ```
 ng serve
 ```
+ou
+```
+npm run start
+```
 > Sobe uma porta: 4200 com live reload do projeto. 
 
-### Teste de
+### Testes
 ```
 ng test
+```
+ou
+```
+npm run test
 ```
 > Roda os teste do projeto
 
