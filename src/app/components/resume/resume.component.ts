@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from "@angular/core";
-import { ResumeService } from "../services/resume/resume.service";
+import { ResumeService } from "../../services/resume/resume.service";
 
-import { IResume } from "../@types/resume";
+import { IResume } from "../../@types/resume";
 
 @Component({
     selector: 'app-resume',
