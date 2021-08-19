@@ -4,7 +4,6 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from './../../../environments/environment';
 
 import { IResume } from 'src/app/@types/resume';
-
 @Injectable({
     providedIn: 'root'
 })
@@ -20,4 +19,4 @@ export class ResumeService {
     }
 
 
-}
+};

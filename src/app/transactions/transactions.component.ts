@@ -2,7 +2,6 @@ import { Component, Input, OnInit } from "@angular/core";
 import { TransactionService } from "../services/transaction/transaction.service";
 
 import { ITransaction } from "../@types/transaction";
-
 @Component({
     selector: 'app-transactions',
     templateUrl: './transactions.component.html',
